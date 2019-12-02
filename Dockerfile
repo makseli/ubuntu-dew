@@ -2,14 +2,15 @@ FROM ubuntu:latest
 
 MAINTAINER Mustafa Akseli <verilojistik@gmail.com>
 
-ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
+ENV DEBCONF_NONINTERACTIVE_SEEN=true
 
 ENV TERM=xterm
 ENV TZ=Europe/Istanbul
 
 # install
 RUN apt-get update
-RUN apt-get install -y git curl tmux zsh nano iputils-ping wget telnet net-tools
+RUN apt-get install -y git curl ca-certificates tmux zsh nano iputils-ping wget telnet net-tools
 
 # Change default shell to ZSH
 RUN chsh -s $(which zsh)
