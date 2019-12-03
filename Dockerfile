@@ -12,10 +12,11 @@ ENV TZ=Europe/Istanbul
 RUN apt-get update
 RUN apt-get install -y git curl ca-certificates tmux zsh nano iputils-ping wget telnet net-tools
 
-# Change default shell to ZSH
-RUN chsh -s $(which zsh)
 
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# Change default shell to ZSH
+RUN chsh -s $(which zsh)
 
 RUN echo "alias nevarneyok='netstat -plntu'" >> ~/.zshrc
 #RUN cp ~/.oh-my-zsh/themes/agnoster.zsh-theme ~/.oh-my-zsh/themes/robbyrussell.zsh-theme
@@ -23,5 +24,11 @@ RUN echo "alias nevarneyok='netstat -plntu'" >> ~/.zshrc
 #clean
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-#CMD bash
+ADD ./docker-run.sh /docker-run.sh
+
+RUN chmod 755 /docker-run.sh
+
+CMD ["./docker-run.sh"]
+
+#CMD zsh
 CMD ["/usr/bin/zsh"]

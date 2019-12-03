@@ -1,7 +1,7 @@
 şimdiki hali idare eder 
 
-- docker build -t makseli/ubuntu-dew:v0.19 .
-- docker run -it makseli/ubuntu-dew:v0.19 
+- docker build -t makseli/ubuntu-dew:v0.34 .
+- docker run -it makseli/ubuntu-dew:v0.34 
 
 TODO 
 - external bir sh dosyası sonra editlenmek ve ihtiyaca binaen çalıştırmak üzere eklenecek
