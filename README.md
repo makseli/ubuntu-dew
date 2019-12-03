@@ -1,10 +1,12 @@
 şimdiki hali idare eder 
 
-- docker build -t makseli/ubuntu-dew:v0.34 .
-- docker run -it makseli/ubuntu-dew:v0.34 
+- git clone https://github.com/makseli/ubuntu-dew.git
+- cd ubuntu-dew
+- docker build -t makseli/ubuntu-dew:v1.1 .
+- docker run -it makseli/ubuntu-dew:v1.1 
 
 TODO 
-- external bir sh dosyası sonra editlenmek ve ihtiyaca binaen çalıştırmak üzere eklenecek
+- [ tamam ] external bir sh dosyası sonra editlenmek ve ihtiyaca binaen çalıştırmak üzere eklenecek
 - ilk maddedeki sh file ile function cd()
 {
  builtin cd "$*" && ls -halF
