@@ -6,11 +6,11 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV DEBCONF_NONINTERACTIVE_SEEN=true
 
 ENV TERM=xterm
-#ENV TZ=Europe/Istanbul
+ENV TZ=Europe/Istanbul
 
 # general purpose lib. install
 RUN apt-get update
-RUN apt-get install -y git curl ca-certificates zsh iputils-ping wget telnet net-tools
+RUN apt-get install -y git curl ca-certificates zsh iputils-ping wget telnet net-tools nano
 
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
@@ -18,7 +18,8 @@ RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh
 RUN chsh -s $(which zsh)
 
 #some alias
-RUN echo "alias nevarneyok='netstat -plntu'" >> ~/.zshrc
+RUN echo "alias nevarneyok='netstat -plntu'\n" >> ~/.zshrc
+RUN echo "function cd()\n{\n builtin cd $1 && ls -halF\n}\n" >> ~/.zshrc
 
 #clean up
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*

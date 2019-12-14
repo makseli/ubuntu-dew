@@ -13,7 +13,7 @@ DockerHub Url : https://hub.docker.com/r/makseli/ubuntu-dew
 
 TODO 
 - [ tamam ] external bir sh dosyası sonra editlenmek ve ihtiyaca binaen çalıştırmak üzere eklenecek
-- ilk maddedeki sh file ile function cd()
+- [ tamam ] ilk maddedeki sh file ile function cd()
 {
  builtin cd "$*" && ls -halF
 } -> .zshrc ye eklenecek 
