@@ -11,9 +11,9 @@
 DockerHub Url : https://hub.docker.com/r/makseli/ubuntu-dew
 
 TODO 
-- [ tamam ] external bir sh dosyası sonra editlenmek ve ihtiyaca binaen çalıştırmak üzere eklenecek
-- [ tamam ] ilk maddedeki sh file ile function cd()
+- [ OK ] external bir sh dosyası sonra editlenmek ve ihtiyaca binaen çalıştırmak üzere eklenecek
+- [ OK ] ilk maddedeki sh file ile function cd()
 {
  builtin cd "$*" && ls -halF
 } -> .zshrc ye eklenecek 
-- .zshrc nin color u agnoster ile değiştirilecek
+- [ OK ] .zshrc nin color u avit ile değiştirilecek
