@@ -29,7 +29,7 @@ RUN git clone https://github.com/powerline/fonts.git --depth=1 && cd fonts && ./
 RUN sed -i 's/robbyrussell/avit/g' ~/.zshrc
 RUN sed -i 's/plugins=(git)/plugins=(git zsh-syntax-highlighting zsh-autosuggestions)/g' ~/.zshrc
 RUN echo "alias nevarneyok='netstat -plntu'\n" >> ~/.zshrc
-RUN echo "function cd()\n{\n builtin cd \"\$*\" && ls -halF\n}\n" >> ~/.zshrc
+RUN echo "function cd()\n{\n builtin cd \"\$*\" && ls -halFt\n}\n" >> ~/.zshrc
 
 RUN locale-gen "en_US.UTF-8" && dpkg-reconfigure locales && export LC_ALL=en_US.UTF-8
 

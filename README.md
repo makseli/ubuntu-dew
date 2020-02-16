@@ -14,6 +14,6 @@ TODO
 - [ OK ] external bir sh dosyası sonra editlenmek ve ihtiyaca binaen çalıştırmak üzere eklenecek
 - [ OK ] ilk maddedeki sh file ile function cd()
 {
- builtin cd "$*" && ls -halF
+ builtin cd "$*" && ls -halFt
 } -> .zshrc ye eklenecek 
 - [ OK ] .zshrc nin color u avit ile değiştirilecek
